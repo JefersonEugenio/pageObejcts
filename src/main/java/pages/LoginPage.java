@@ -12,10 +12,6 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    private By emailField = By.id("user-name");
-    private By passwordField = By.id("password");
-    private By loginButton = By.id("login-button");
-
     public WebElement getLoginEmailField() {
         return driver.findElement(By.id("user-name"));
     }
