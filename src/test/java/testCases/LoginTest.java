@@ -3,15 +3,15 @@ package testCases;
 import framework.supports.BaseTest;
 import framework.webDrivers.DriverManager;
 import org.junit.jupiter.api.Test;
-import tasks.LoginTask;
+import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 
-    private final LoginTask loginTask = new LoginTask(DriverManager.getDriver());
+    private final LoginPage loginPage = new LoginPage(DriverManager.getDriver());
 
     @Test
-    public void loginValido() {
-        loginTask.fazerLogin("standard_user", "secret_sauce");
+    public void loginValidoTest() {
+        loginPage.fazerLogin("standard_user", "secret_sauce");
     }
 
 }

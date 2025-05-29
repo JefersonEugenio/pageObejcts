@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
@@ -16,16 +15,21 @@ public class LoginPage {
     private By passwordField = By.id("password");
     private By loginButton = By.id("login-button");
 
-    public WebElement getLoginEmailField() {
-        return driver.findElement(By.id("user-name"));
+    public void preencherEmail(String email) {
+        driver.findElement(emailField).sendKeys(email);
     }
 
-    public WebElement getLoginPasswordField() {
-        return driver.findElement(By.id("password"));
+    public void preencherSenha(String senha) {
+        driver.findElement(passwordField).sendKeys(senha);
     }
 
-    public WebElement getLoginButton() {
-        return driver.findElement(By.id("login-button"));
+    public void clicarLogin() {
+        driver.findElement(loginButton).click();
     }
 
+    public void fazerLogin(String email, String senha) {
+        preencherEmail(email);
+        preencherSenha(senha);
+        clicarLogin();
+    }
 }
